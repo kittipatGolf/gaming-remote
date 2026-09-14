@@ -81,11 +81,13 @@ button { color: inherit; }
 
 /* Home */
 .home-screen { position: relative; min-height: calc(100dvh - 53px); padding: 4px 15px 15px; display: flex; flex-direction: column; overflow: hidden; }
-.home-screen h1 { margin: 13px 0 8px; text-align: center; font-size: 15px; font-weight: 900; }
+.home-screen > .wordmark { width: 240px; margin-top: 7px; font-size: 84px; line-height: .72; }
+.home-screen > .wordmark > strong { font-size: 90px; }
+.home-screen h1 { margin: 15px 0 9px; text-align: center; font-size: 16px; font-weight: 900; }
 .hero-doodle { position: absolute; top: 25px; font-size: 34px; font-weight: 900; }
 .hero-doodle-left { left: 20px; transform: rotate(-24deg); }
 .hero-doodle-right { right: 19px; color: var(--red); transform: rotate(18deg); }
-.home-stage { position: relative; flex: 1; min-height: 575px; margin: 0 -15px -15px; padding: 285px 15px 28px; isolation: isolate; overflow: hidden; }
+.home-stage { position: relative; flex: 1; min-height: 575px; margin: 0 -15px -15px; padding: 270px 15px 22px; display: flex; flex-direction: column; justify-content: flex-end; isolation: isolate; overflow: hidden; }
 .home-hero-art { position: absolute; z-index: -1; inset: 0; }
 .home-hero-image { object-fit: cover; object-position: center; }
 .hero-quote { position: absolute; z-index: 1; top: 88px; left: 11px; font-size: 12px; }
