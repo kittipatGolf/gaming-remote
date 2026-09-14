@@ -277,7 +277,8 @@ button { color: inherit; }
 .moment-caption { height: 45px; display: grid; grid-template-columns: 32px auto 1fr 28px; align-items: center; gap: 4px; text-align: left; }
 .mini-avatar { width: 25px; height: 25px; border-radius: 50%; background: #111; }.moment-caption strong { font-size: 13px; }.moment-caption small { align-self: end; margin-bottom: 8px; font-size: 8px; }
 .moment-caption svg { color: var(--red); }
-.moment-screen .wordmark { position: relative; z-index: 2; margin-top: 23px; }
+.moment-screen .wordmark { position: relative; z-index: 2; width: 235px; margin-top: 48px; font-size: 82px; }
+.moment-screen .wordmark > strong { font-size: 89px; }
 
 @media (min-width: 600px) {
   .app-stage { padding: 22px 0; }
