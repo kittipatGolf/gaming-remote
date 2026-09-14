@@ -1,4 +1,5 @@
 import { Camera, MapPinned, Store, Target, Trophy } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { MobileShell } from "@/components/layout/MobileShell";
 import { Sticker } from "@/components/ui/Sticker";
@@ -20,10 +21,19 @@ export default function HomePage() {
         <Wordmark />
         <h1>เชียร์ดี คนดี กอล์ฟดี วันเดียวจบ</h1>
 
-        <div className="beer-hero" aria-label="แก้วเครื่องดื่มเย็นสดชื่น">
-          <div className="foam"><i /><i /><i /></div>
-          <div className="glass-shine" />
-          <div className="beer-bubbles">· ° ·<br />° · ° ·</div>
+        <div
+          className="home-hero-art"
+          role="img"
+          aria-label="แก้วเครื่องดื่มสีทองกับลูกกอล์ฟและบรรยากาศงานเทศกาล"
+        >
+          <Image
+            src="/images/one-beer-hero.png"
+            alt=""
+            fill
+            priority
+            sizes="(min-width: 1024px) 430px, 282px"
+            className="home-hero-image"
+          />
         </div>
 
         <Sticker tone="yellow" className="hero-quote">LIFE IS<br />TOO SHORT<br />TO DRINK<br />BAD BEER</Sticker>

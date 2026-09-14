@@ -85,13 +85,8 @@ button { color: inherit; }
 .hero-doodle { position: absolute; top: 25px; font-size: 34px; font-weight: 900; }
 .hero-doodle-left { left: 20px; transform: rotate(-24deg); }
 .hero-doodle-right { right: 19px; color: var(--red); transform: rotate(18deg); }
-.beer-hero { width: 242px; height: 190px; margin: 8px auto 0; position: relative; overflow: hidden; border-radius: 48% 48% 22% 22% / 20% 20% 7% 7%; background: linear-gradient(90deg, #bd6818 0%, #f9bb2e 18%, #e78e15 55%, #9c4917 100%); border: 5px solid #201c16; box-shadow: inset 16px 0 25px rgb(255 238 133 / 40%), inset -10px 0 20px rgb(70 31 5 / 35%); transform: rotate(-4deg); }
-.beer-hero::before { content: ""; position: absolute; inset: -1px 8px auto; height: 54px; background: #fbf6df; border-radius: 45% 50% 35% 30%; border-bottom: 3px solid #2b251c; filter: drop-shadow(0 8px 2px #f9e4a6); }
-.foam { position: absolute; z-index: 2; top: 16px; left: 20px; display: flex; gap: 20px; }
-.foam i { width: 42px; height: 37px; border: 3px solid #211d15; border-radius: 50%; background: #fff9df; }
-.foam i:nth-child(2) { transform: translateY(-10px) scale(1.25); }
-.glass-shine { position: absolute; top: 68px; left: 34px; width: 16px; height: 94px; border-radius: 50%; background: rgb(255 255 255 / 48%); transform: rotate(4deg); }
-.beer-bubbles { position: absolute; right: 35px; bottom: 22px; font-size: 28px; line-height: 1.2; color: #fff7c0; }
+.home-hero-art { width: 282px; height: 242px; margin: 2px auto -20px; position: relative; filter: drop-shadow(0 6px 5px rgb(30 25 18 / 12%)); }
+.home-hero-image { object-fit: contain; }
 .hero-quote { position: absolute; top: 255px; left: 11px; font-size: 12px; }
 .home-actions { margin-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .action-card { min-height: 111px; padding: 12px 8px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 2px solid #171715; border-radius: 8px 15px 9px 13px; box-shadow: 3px 4px 0 #171715; transition: transform .18s, box-shadow .18s; }
@@ -317,7 +312,7 @@ button { color: inherit; }
   .home-screen > .wordmark { grid-column: 1; grid-row: 1; width: 255px; margin-top: 10px; font-size: 91px; }
   .home-screen > .wordmark > strong { font-size: 96px; }
   .home-screen > h1 { grid-column: 1; grid-row: 2; margin: 24px 0 4px; font-size: 21px; }
-  .beer-hero { grid-column: 1; grid-row: 3; width: 365px; height: 294px; margin-top: 20px; }
+  .home-hero-art { grid-column: 1; grid-row: 3; width: 430px; height: 360px; margin: 12px auto -24px; }
   .home-actions { grid-column: 2; grid-row: 1 / span 3; width: 100%; margin: 0; gap: 20px; }
   .action-card { min-height: 205px; padding: 25px 14px; border-width: 3px; box-shadow: 6px 7px 0 #171715; }
   .action-card:hover { box-shadow: 9px 10px 0 #171715; }
