@@ -110,7 +110,7 @@ button { color: inherit; }
 .segmented-control button { border: 0; border-radius: 6px; background: transparent; display: flex; align-items: center; justify-content: center; gap: 6px; font-size: 12px; font-weight: 800; cursor: pointer; }
 .segmented-control button.selected { background: var(--red); color: white; box-shadow: 0 2px 6px rgb(187 24 30 / 22%); }
 .upload-preview { position: relative; display: block; width: 100%; aspect-ratio: 16/8.4; overflow: hidden; border-radius: 10px; border: 2px solid #292923; cursor: pointer; }
-.upload-preview img { object-fit: cover; }
+.upload-preview img, .upload-preview video { width: 100%; height: 100%; object-fit: cover; }
 .upload-preview > span { position: absolute; right: 7px; bottom: 7px; z-index: 2; padding: 6px 9px; display: flex; align-items: center; gap: 5px; border-radius: 6px; background: rgb(0 0 0 / 73%); color: white; font-size: 10px; font-weight: 700; }
 .upload-preview input { position: absolute; opacity: 0; pointer-events: none; }
 .field-label { display: block; margin-top: 13px; font-size: 11px; font-weight: 800; }

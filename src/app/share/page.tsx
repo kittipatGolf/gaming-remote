@@ -3,13 +3,42 @@
 import { Check, ImageIcon, Sparkles, Upload, Video } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { MobileShell } from "@/components/layout/MobileShell";
+
+interface MediaPreview {
+  url: string;
+  type: "image" | "video";
+}
 
 export default function SharePage() {
   const [mode, setMode] = useState<"photo" | "video">("photo");
   const [nickname, setNickname] = useState("Mint");
   const [accepted, setAccepted] = useState(true);
+  const [preview, setPreview] = useState<MediaPreview>({
+    url: "/images/festival-friends.png",
+    type: "image",
+  });
+  const objectUrlRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    return () => {
+      if (objectUrlRef.current) URL.revokeObjectURL(objectUrlRef.current);
+    };
+  }, []);
+
+  const handleMediaChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+
+    if (objectUrlRef.current) URL.revokeObjectURL(objectUrlRef.current);
+
+    const objectUrl = URL.createObjectURL(file);
+    objectUrlRef.current = objectUrl;
+    const type = file.type.startsWith("video/") ? "video" : "image";
+    setPreview({ url: objectUrl, type });
+    setMode(type === "video" ? "video" : "photo");
+  };
 
   return (
     <MobileShell title="ส่งรูป / วิดีโอ" backHref="/" showNav={false}>
@@ -27,9 +56,24 @@ export default function SharePage() {
         </div>
 
         <label className="upload-preview">
-          <Image src="/images/festival-friends.png" alt="ตัวอย่างโมเมนต์ในงาน" fill sizes="390px" priority />
+          {preview.type === "image" ? (
+            <Image
+              src={preview.url}
+              alt="ตัวอย่างรูปที่เลือก"
+              fill
+              sizes="390px"
+              priority
+              unoptimized={preview.url.startsWith("blob:")}
+            />
+          ) : (
+            <video src={preview.url} controls muted playsInline />
+          )}
           <span><Upload size={17} /> เปลี่ยน{mode === "photo" ? "รูป" : "วิดีโอ"}</span>
-          <input type="file" accept={mode === "photo" ? "image/*" : "video/*"} />
+          <input
+            type="file"
+            accept={mode === "photo" ? "image/*" : "video/*"}
+            onChange={handleMediaChange}
+          />
         </label>
 
         <label className="field-label">
