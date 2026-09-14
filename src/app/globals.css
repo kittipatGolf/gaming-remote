@@ -36,7 +36,7 @@ button { color: inherit; }
 .top-spacer { width: 34px; }
 .screen-content { min-height: calc(100dvh - 53px); }
 .screen-content.with-nav { padding-bottom: 68px; }
-.paper-texture { background-color: var(--paper); background-image: radial-gradient(#c7c3b3 0.5px, transparent 0.6px); background-size: 9px 9px; }
+.paper-texture { background-color: var(--paper); }
 
 .bottom-nav { position: fixed; z-index: 20; left: 50%; bottom: 0; width: 100%; max-width: 430px; height: 67px; display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; padding: 5px 3px 4px; background: rgb(255 253 247 / 96%); border-top: 1px solid #dedbd2; backdrop-filter: blur(14px); transform: translateX(-50%); }
 .bottom-nav a { height: 55px; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; color: #8a8b86; font-size: 8px; font-weight: 600; }
@@ -307,7 +307,6 @@ button { color: inherit; }
   .desktop-header nav a:hover::after, .desktop-header nav a.active::after { transform: scaleX(1) rotate(-2deg); }
   .desktop-share { min-height: 43px; padding: 0 21px; display: inline-flex; align-items: center; justify-content: center; background: var(--red); color: white; font-size: 12px; font-weight: 900; clip-path: polygon(2% 8%, 98% 0, 100% 87%, 1% 100%); }
   .screen-content, .screen-content.with-nav { min-height: calc(100dvh - 82px); padding-bottom: 0; }
-  .paper-texture { background-size: 12px 12px; }
   .home-screen, .form-screen, .status-screen, .leaderboard-screen, .missions-screen, .booths-screen, .rewards-screen, .profile-screen, .booth-detail { min-height: calc(100dvh - 82px); max-width: 1280px; margin: 0 auto; padding: 48px clamp(36px, 5vw, 76px) 64px; overflow: visible; }
 
   /* Desktop home */
