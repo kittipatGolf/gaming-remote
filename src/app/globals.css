@@ -26,9 +26,6 @@ button { color: inherit; }
 .app-stage { min-height: 100dvh; display: flex; justify-content: center; background: radial-gradient(circle at 50% 5%, #fff 0, #ebe8df 45%, #d8d5cc 100%); }
 .phone-shell { position: relative; width: 100%; max-width: 430px; min-height: 100dvh; overflow: hidden; background: var(--paper); box-shadow: 0 20px 70px rgb(20 20 15 / 14%); }
 .stage-dark, .phone-dark { background: #080808; }
-.status-bar { height: 25px; padding: 7px 17px 0; display: flex; align-items: center; justify-content: space-between; font-size: 10px; font-weight: 800; position: relative; z-index: 30; }
-.phone-dark .status-bar { color: white; }
-.status-icons { display: flex; align-items: center; gap: 4px; }
 .top-bar { height: 53px; padding: 4px 14px 7px; display: grid; grid-template-columns: 34px 1fr 34px; align-items: center; position: relative; z-index: 25; background: rgb(255 253 242 / 92%); backdrop-filter: blur(12px); }
 .top-bar > a, .top-bar > button { width: 34px; height: 34px; display: grid; place-items: center; border: 0; background: transparent; border-radius: 50%; cursor: pointer; }
 .top-bar > a:hover, .top-bar > button:hover { background: #eeeadc; }
@@ -36,7 +33,7 @@ button { color: inherit; }
 .top-copy span { font-size: 7px; font-weight: 900; letter-spacing: -.15px; }
 .top-copy strong { margin-top: 3px; font-size: 11px; font-weight: 800; }
 .top-spacer { width: 34px; }
-.screen-content { min-height: calc(100dvh - 78px); }
+.screen-content { min-height: calc(100dvh - 53px); }
 .screen-content.with-nav { padding-bottom: 68px; }
 .paper-texture { background-color: var(--paper); background-image: radial-gradient(#c7c3b3 0.5px, transparent 0.6px); background-size: 9px 9px; }
 
@@ -75,7 +72,7 @@ button { color: inherit; }
 .sticker-black { background: #111; color: white; }
 
 /* Home */
-.home-screen { position: relative; min-height: calc(100dvh - 78px); padding: 4px 15px 15px; overflow: hidden; }
+.home-screen { position: relative; min-height: calc(100dvh - 53px); padding: 4px 15px 15px; overflow: hidden; }
 .home-screen h1 { margin: 13px 0 8px; text-align: center; font-size: 15px; font-weight: 900; }
 .hero-doodle { position: absolute; top: 25px; font-size: 34px; font-weight: 900; }
 .hero-doodle-left { left: 20px; transform: rotate(-24deg); }
@@ -103,7 +100,7 @@ button { color: inherit; }
 .home-footer-art b { color: var(--yellow); font-size: 22px; }
 
 /* Shared headings and forms */
-.form-screen, .status-screen, .leaderboard-screen, .missions-screen, .booths-screen, .rewards-screen, .profile-screen, .booth-detail { min-height: calc(100dvh - 78px); padding: 14px 17px 28px; position: relative; overflow: hidden; }
+.form-screen, .status-screen, .leaderboard-screen, .missions-screen, .booths-screen, .rewards-screen, .profile-screen, .booth-detail { min-height: calc(100dvh - 53px); padding: 14px 17px 28px; position: relative; overflow: hidden; }
 .headline-block { text-align: center; position: relative; }
 .headline-block h1 { font-family: Impact, "Arial Black", sans-serif; font-size: 39px; line-height: .9; letter-spacing: .5px; transform: rotate(-2deg); }
 .headline-block p { margin-top: 17px; font-size: 13px; font-weight: 700; }
@@ -258,7 +255,7 @@ button { color: inherit; }
 .activity-row small { font-size: 9px; font-weight: 800; }.activity-row small.pending { color: var(--red); }.activity-row small.approved { color: var(--green); }.activity-row small.rejected { color: #d35142; }
 
 /* Full screen moment */
-.moment-screen { position: relative; min-height: calc(100dvh - 25px); padding: 28px 19px 20px; overflow: hidden; background: #080808; color: white; text-align: center; }
+.moment-screen { position: relative; min-height: 100dvh; padding: 28px 19px 20px; overflow: hidden; background: #080808; color: white; text-align: center; }
 .moment-close { position: absolute; top: 9px; right: 14px; z-index: 5; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: #252525; font-size: 23px; }
 .moment-screen > h1 { font-family: Impact, sans-serif; font-size: 37px; line-height: .93; transform: rotate(-2deg); }
 .moment-screen > h1 strong { color: var(--yellow); }
@@ -275,9 +272,9 @@ button { color: inherit; }
 @media (min-width: 600px) {
   .app-stage { padding: 22px 0; }
   .phone-shell { min-height: 860px; border: 2px solid #191916; border-radius: 24px; }
-  .screen-content { min-height: 782px; }
-  .home-screen, .form-screen, .status-screen, .leaderboard-screen, .missions-screen, .booths-screen, .rewards-screen, .profile-screen, .booth-detail { min-height: 782px; }
-  .moment-screen { min-height: 831px; }
+  .screen-content { min-height: 807px; }
+  .home-screen, .form-screen, .status-screen, .leaderboard-screen, .missions-screen, .booths-screen, .rewards-screen, .profile-screen, .booth-detail { min-height: 807px; }
+  .moment-screen { min-height: 860px; }
   .bottom-nav { max-width: 426px; }
 }
 

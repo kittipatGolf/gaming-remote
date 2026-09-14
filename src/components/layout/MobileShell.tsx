@@ -1,6 +1,6 @@
 "use client";
 
-import { ArrowLeft, BatteryMedium, Menu, Signal, Wifi, X } from "lucide-react";
+import { ArrowLeft, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
 import { BottomNav } from "./BottomNav";
@@ -30,10 +30,6 @@ export function MobileShell({ children, title, eyebrow, backHref, showNav = true
   return (
     <div className={`app-stage ${dark ? "stage-dark" : ""}`}>
       <div className={`phone-shell ${dark ? "phone-dark" : ""}`}>
-        <div className="status-bar" aria-hidden="true">
-          <span>9:41</span>
-          <span className="status-icons"><Signal size={12} fill="currentColor" /><Wifi size={13} /><BatteryMedium size={16} /></span>
-        </div>
         {!dark && (
           <header className="top-bar">
             {backHref ? (
