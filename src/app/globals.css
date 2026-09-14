@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #fffdf2;
+  --paper: #fdf6e3;
   --ink: #11120f;
   --red: #e72a2f;
   --blue: #185fd4;
@@ -27,7 +27,7 @@ button { color: inherit; }
 .phone-shell { position: relative; width: 100%; max-width: 430px; min-height: 100dvh; overflow: hidden; background: var(--paper); box-shadow: 0 20px 70px rgb(20 20 15 / 14%); }
 .stage-dark, .phone-dark { background: #080808; }
 .desktop-header { display: none; }
-.top-bar { height: 53px; padding: 4px 14px 7px; display: grid; grid-template-columns: 34px 1fr 34px; align-items: center; position: relative; z-index: 25; background: rgb(255 253 242 / 92%); backdrop-filter: blur(12px); }
+.top-bar { height: 53px; padding: 4px 14px 7px; display: grid; grid-template-columns: 34px 1fr 34px; align-items: center; position: relative; z-index: 25; background: rgb(253 246 227 / 92%); backdrop-filter: blur(12px); }
 .top-bar > a, .top-bar > button { width: 34px; height: 34px; display: grid; place-items: center; border: 0; background: transparent; border-radius: 50%; cursor: pointer; }
 .top-bar > a:hover, .top-bar > button:hover { background: #eeeadc; }
 .top-copy { display: flex; flex-direction: column; align-items: center; line-height: 1.05; text-align: center; }
@@ -38,7 +38,7 @@ button { color: inherit; }
 .screen-content.with-nav { padding-bottom: 68px; }
 .paper-texture { background-color: var(--paper); }
 
-.bottom-nav { position: fixed; z-index: 20; left: 50%; bottom: 0; width: 100%; max-width: 430px; height: 67px; display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; padding: 5px 3px 4px; background: rgb(255 253 247 / 96%); border-top: 1px solid #dedbd2; backdrop-filter: blur(14px); transform: translateX(-50%); }
+.bottom-nav { position: fixed; z-index: 20; left: 50%; bottom: 0; width: 100%; max-width: 430px; height: 67px; display: grid; grid-template-columns: repeat(5, 1fr); align-items: center; padding: 5px 3px 4px; background: rgb(253 246 227 / 96%); border-top: 1px solid #dedbd2; backdrop-filter: blur(14px); transform: translateX(-50%); }
 .bottom-nav a { height: 55px; min-width: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; color: #8a8b86; font-size: 8px; font-weight: 600; }
 .bottom-nav a.active { color: var(--red); font-weight: 800; }
 .nav-icon { width: 30px; height: 27px; display: grid; place-items: center; border-radius: 9px; }
@@ -89,7 +89,7 @@ button { color: inherit; }
 .hero-doodle-right { right: 19px; color: var(--red); transform: rotate(18deg); }
 .home-stage { position: relative; flex: 1; min-height: 575px; margin: 0 -15px -15px; padding: 270px 15px 22px; display: flex; flex-direction: column; justify-content: flex-end; isolation: isolate; overflow: hidden; }
 .home-hero-art { position: absolute; z-index: -1; inset: 0; }
-.home-hero-image { object-fit: cover; object-position: center; }
+.home-hero-image { object-fit: cover; object-position: center; mask-image: linear-gradient(to bottom, transparent 0, #000 34px); }
 .hero-quote { position: absolute; z-index: 1; top: 88px; left: 11px; font-size: 12px; }
 .home-actions { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .action-card { min-height: 111px; padding: 12px 8px 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; border: 2px solid #171715; border-radius: 8px 15px 9px 13px; box-shadow: 3px 4px 0 #171715; transition: transform .18s, box-shadow .18s; }
@@ -299,7 +299,7 @@ button { color: inherit; }
   .app-stage { display: block; padding: 0; background: var(--paper); }
   .phone-shell { width: 100%; max-width: none; min-height: 100dvh; overflow: visible; border: 0; border-radius: 0; box-shadow: none; }
   .top-bar, .bottom-nav { display: none; }
-  .desktop-header { position: sticky; top: 0; z-index: 40; height: 82px; padding: 0 clamp(28px, 4vw, 72px); display: grid; grid-template-columns: 132px minmax(0, 1fr) auto; align-items: center; gap: 28px; border-bottom: 2px solid #191916; background: rgb(255 253 242 / 94%); backdrop-filter: blur(14px); }
+  .desktop-header { position: sticky; top: 0; z-index: 40; height: 82px; padding: 0 clamp(28px, 4vw, 72px); display: grid; grid-template-columns: 132px minmax(0, 1fr) auto; align-items: center; gap: 28px; border-bottom: 2px solid #191916; background: rgb(253 246 227 / 94%); backdrop-filter: blur(14px); }
   .desktop-brand { display: flex; flex-direction: column; width: fit-content; font-family: Impact, "Arial Black", sans-serif; font-size: 25px; line-height: .7; letter-spacing: -1px; transform: rotate(-2deg); }
   .desktop-brand strong { color: var(--red); font-size: 31px; letter-spacing: -.5px; }
   .desktop-header nav { display: flex; align-items: center; justify-content: center; gap: clamp(13px, 1.6vw, 28px); }
