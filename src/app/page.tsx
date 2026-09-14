@@ -14,7 +14,7 @@ const actions = [
 
 export default function HomePage() {
   return (
-    <MobileShell eyebrow="SPECIAL BEER | BETTER PEOPLE" title="CRAFT BEER | FOOD | GOLF">
+    <MobileShell eyebrow="SPECIAL BEER | BETTER PEOPLE" title="CRAFT BEER | FOOD | GOLF" showNav={false}>
       <section className="home-screen paper-texture">
         <div className="hero-doodle hero-doodle-left">✎</div>
         <div className="hero-doodle hero-doodle-right">☄</div>

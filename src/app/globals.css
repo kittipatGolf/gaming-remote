@@ -85,7 +85,7 @@ button { color: inherit; }
 .hero-doodle { position: absolute; top: 25px; font-size: 34px; font-weight: 900; }
 .hero-doodle-left { left: 20px; transform: rotate(-24deg); }
 .hero-doodle-right { right: 19px; color: var(--red); transform: rotate(18deg); }
-.home-stage { position: relative; flex: 1; min-height: 575px; margin: 0 -15px -15px; padding: 230px 15px 28px; isolation: isolate; overflow: hidden; }
+.home-stage { position: relative; flex: 1; min-height: 575px; margin: 0 -15px -15px; padding: 250px 15px 28px; isolation: isolate; overflow: hidden; }
 .home-hero-art { position: absolute; z-index: -1; inset: 0; }
 .home-hero-image { object-fit: cover; object-position: center; }
 .hero-quote { position: absolute; z-index: 1; top: 88px; left: 11px; font-size: 12px; }
@@ -287,6 +287,7 @@ button { color: inherit; }
   .screen-content { min-height: 807px; }
   .home-screen, .form-screen, .status-screen, .leaderboard-screen, .missions-screen, .booths-screen, .rewards-screen, .profile-screen, .booth-detail { min-height: 807px; }
   .home-screen { min-height: calc(100dvh - 142px); }
+  .screen-content:not(.with-nav) > .home-screen { min-height: calc(100dvh - 97px); }
   .moment-screen { min-height: 860px; }
   .bottom-nav { max-width: 426px; }
 }
