@@ -21,34 +21,36 @@ export default function HomePage() {
         <Wordmark />
         <h1>เชียร์ดี คนดี กอล์ฟดี วันเดียวจบ</h1>
 
-        <div
-          className="home-hero-art"
-          role="img"
-          aria-label="แก้วเครื่องดื่มสีทองกับลูกกอล์ฟและบรรยากาศงานเทศกาล"
-        >
-          <Image
-            src="/images/one-beer-hero.png"
-            alt=""
-            fill
-            priority
-            sizes="(min-width: 1024px) 430px, 282px"
-            className="home-hero-image"
-          />
+        <div className="home-stage">
+          <div
+            className="home-hero-art"
+            role="img"
+            aria-label="แก้วเครื่องดื่มสีทองกับลูกกอล์ฟและบรรยากาศงานเทศกาล"
+          >
+            <Image
+              src="/images/one-beer-hero.png"
+              alt=""
+              fill
+              priority
+              sizes="(min-width: 1024px) 1128px, 100vw"
+              className="home-hero-image"
+            />
+          </div>
+
+          <Sticker tone="yellow" className="hero-quote">LIFE IS<br />TOO SHORT<br />TO DRINK<br />BAD BEER</Sticker>
+
+          <div className="home-actions">
+            {actions.map(({ href, title, subtitle, icon: Icon, tone }) => (
+              <Link href={href} key={href} className={`action-card action-${tone}`}>
+                <span className="action-icon"><Icon size={29} strokeWidth={2.6} /></span>
+                <strong>{title}</strong>
+                <small>{subtitle}</small>
+              </Link>
+            ))}
+          </div>
+
+          <div className="home-footer-art"><MapPinned size={24} /><span>GOOD BEER<br />BETTER PEOPLE</span><b>♢♢</b></div>
         </div>
-
-        <Sticker tone="yellow" className="hero-quote">LIFE IS<br />TOO SHORT<br />TO DRINK<br />BAD BEER</Sticker>
-
-        <div className="home-actions">
-          {actions.map(({ href, title, subtitle, icon: Icon, tone }) => (
-            <Link href={href} key={href} className={`action-card action-${tone}`}>
-              <span className="action-icon"><Icon size={29} strokeWidth={2.6} /></span>
-              <strong>{title}</strong>
-              <small>{subtitle}</small>
-            </Link>
-          ))}
-        </div>
-
-        <div className="home-footer-art"><MapPinned size={24} /><span>GOOD BEER<br />BETTER PEOPLE</span><b>♢♢</b></div>
       </section>
     </MobileShell>
   );
