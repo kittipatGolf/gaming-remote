@@ -2,6 +2,7 @@
 
 import { ArrowLeft, Menu, X } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { BottomNav } from "./BottomNav";
 
@@ -26,21 +27,37 @@ const menuLinks = [
 
 export function MobileShell({ children, title, eyebrow, backHref, showNav = true, dark = false }: MobileShellProps) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const desktopLinks = menuLinks.filter(([, href]) => href !== "/share");
 
   return (
     <div className={`app-stage ${dark ? "stage-dark" : ""}`}>
       <div className={`phone-shell ${dark ? "phone-dark" : ""}`}>
         {!dark && (
-          <header className="top-bar">
-            {backHref ? (
-              <Link href={backHref} aria-label="ย้อนกลับ"><ArrowLeft size={22} /></Link>
-            ) : <span className="top-spacer" />}
-            <div className="top-copy">
-              {eyebrow && <span>{eyebrow}</span>}
-              {title && <strong>{title}</strong>}
-            </div>
-            <button type="button" aria-label="เปิดเมนู" onClick={() => setMenuOpen(true)}><Menu size={23} /></button>
-          </header>
+          <>
+            <header className="desktop-header">
+              <Link href="/" className="desktop-brand" aria-label="One Beer หน้าหลัก">
+                <span>ONE</span><strong>BEER</strong>
+              </Link>
+              <nav aria-label="เมนูเดสก์ท็อป">
+                {desktopLinks.map(([label, href]) => {
+                  const active = href === "/" ? pathname === "/" : pathname.startsWith(href);
+                  return <Link key={href} href={href} className={active ? "active" : ""}>{label}</Link>;
+                })}
+              </nav>
+              <Link href="/share" className="desktop-share">ส่งโมเมนต์ขึ้นจอ</Link>
+            </header>
+            <header className="top-bar">
+              {backHref ? (
+                <Link href={backHref} aria-label="ย้อนกลับ"><ArrowLeft size={22} /></Link>
+              ) : <span className="top-spacer" />}
+              <div className="top-copy">
+                {eyebrow && <span>{eyebrow}</span>}
+                {title && <strong>{title}</strong>}
+              </div>
+              <button type="button" aria-label="เปิดเมนู" onClick={() => setMenuOpen(true)}><Menu size={23} /></button>
+            </header>
+          </>
         )}
 
         <main className={showNav ? "screen-content with-nav" : "screen-content"}>{children}</main>
