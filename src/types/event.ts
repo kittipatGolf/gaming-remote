@@ -35,3 +35,15 @@ export interface ActivityItem {
   status: "รอการอนุมัติ" | "อนุมัติแล้ว" | "ไม่อนุมัติ";
   image: string;
 }
+
+export interface SubmissionPayload {
+  nickname: string;
+  mediaType: "photo" | "video";
+  fileName: string;
+}
+
+export interface SubmissionResult extends SubmissionPayload {
+  id: string;
+  status: "PENDING";
+  createdAt: string;
+}
