@@ -1,4 +1,4 @@
-import { Camera, MapPinned, Store, Target, Trophy } from "lucide-react";
+import { Camera, Store, Target, Trophy } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { MobileShell } from "@/components/layout/MobileShell";
@@ -48,8 +48,6 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
-
-          <div className="home-footer-art"><MapPinned size={24} /><span>GOOD BEER<br />BETTER PEOPLE</span><b>♢♢</b></div>
         </div>
       </section>
     </MobileShell>

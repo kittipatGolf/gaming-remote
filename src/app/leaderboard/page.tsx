@@ -1,10 +1,10 @@
 "use client";
 
 import { Medal, Trophy } from "lucide-react";
+import Image from "next/image";
 import { leaderboardApi } from "@/api/leaderboard";
 import { MobileShell } from "@/components/layout/MobileShell";
 import { ErrorState, LoadingState } from "@/components/ui/DataState";
-import { Sticker } from "@/components/ui/Sticker";
 import { useAsyncData } from "@/hooks/useAsyncData";
 
 export default function LeaderboardPage() {
@@ -29,8 +29,14 @@ export default function LeaderboardPage() {
             ))}
           </div>
         )}
-        <Sticker tone="yellow" className="play-more">PLAY MORE<br />BEER MORE!<br /><strong>MORE!</strong></Sticker>
-        <div className="golfer-art">🏌</div>
+        <div className="leaderboard-promo">
+          <Image
+            src="/images/leaderboard-play-more.png"
+            alt="Play more, beer more, more"
+            fill
+            sizes="(min-width: 1024px) 760px, calc(100vw - 34px)"
+          />
+        </div>
       </section>
     </MobileShell>
   );

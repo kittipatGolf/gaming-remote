@@ -1,6 +1,6 @@
 "use client";
 
-import { Check, ImageIcon, Sparkles, Upload, Video } from "lucide-react";
+import { Check, ImageIcon, MapPinned, Sparkles, Upload, Video } from "lucide-react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -141,7 +141,11 @@ export default function SharePage() {
           <Upload size={20} /> {submitting ? "กำลังส่ง..." : "ส่งขึ้นจอใหญ่"}
         </button>
 
-        <div className="footer-saying">GOOD BEER<br /><strong>BETTER PEOPLE</strong><span>♢♢</span></div>
+        <div className="brand-promo-strip">
+          <MapPinned size={24} />
+          <span>GOOD BEER<br />BETTER PEOPLE</span>
+          <b>♢♢</b>
+        </div>
       </section>
     </MobileShell>
   );
