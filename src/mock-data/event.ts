@@ -58,10 +58,10 @@ export const booths: Booth[] = [
 ];
 
 export const rewards: Reward[] = [
-  { name: "iPhone 15", amount: 1, visual: "▯", tone: "#ece7df" },
-  { name: "Golf Bag", amount: 1, visual: "♟", tone: "#e8e6e0" },
-  { name: "Gift Voucher", amount: 5, visual: "TICKET", tone: "#191919" },
-  { name: "Premium Cap", amount: 10, visual: "◒", tone: "#f3d743" },
+  { name: "iPhone 15", amount: 1, image: "/images/reward-smartphone.png" },
+  { name: "Golf Bag", amount: 1, image: "/images/reward-golf-bag.png" },
+  { name: "Gift Voucher", amount: 5, image: "/images/reward-gift-voucher.png" },
+  { name: "Premium Cap", amount: 10, image: "/images/reward-premium-cap.png" },
 ];
 
 export const activities: ActivityItem[] = [

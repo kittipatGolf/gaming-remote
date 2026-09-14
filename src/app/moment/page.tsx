@@ -8,15 +8,21 @@ export default function MomentPage() {
   return (
     <MobileShell showNav={false} dark>
       <section className="moment-screen">
+        <Image
+          src="/images/moment-live-background.png"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="moment-background"
+        />
         <Link href="/profile" className="moment-close" aria-label="กลับไปโปรไฟล์">×</Link>
         <h1>YOUR MOMENT<br /><strong>GOES LIVE!</strong></h1>
         <div className="moment-card">
           <div className="moment-photo"><Image src="/images/festival-friends.png" alt="โมเมนต์ของ Mint" fill sizes="380px" priority /></div>
           <div className="moment-caption"><span className="mini-avatar" /> <strong>@Mint</strong><small>BAY 07</small><Heart size={24} fill="#e5242a" /></div>
         </div>
-        <div className="moment-rays" />
-        <Wordmark compact />
-        <div className="crowd">♩ ＼o/ \o/ ＼o/ \o/ 🍺</div>
+        <Wordmark />
       </section>
     </MobileShell>
   );

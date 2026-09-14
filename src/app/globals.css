@@ -241,7 +241,8 @@ button { color: inherit; }
 .rewards-screen h2 { margin: 23px 0 11px; font-size: 12px; font-weight: 900; }
 .reward-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px 10px; }
 .reward-item { display: flex; flex-direction: column; align-items: center; font-size: 10px; }
-.reward-visual { width: 105px; height: 74px; display: grid; place-items: center; border-radius: 10px 16px 8px 14px; font-family: Impact, sans-serif; color: white; font-size: 20px; border: 2px solid #171713; box-shadow: 3px 3px 0 #171713; }
+.reward-visual { position: relative; width: 105px; height: 74px; overflow: hidden; border-radius: 10px 16px 8px 14px; border: 2px solid #171713; box-shadow: 3px 3px 0 #171713; background: var(--paper); }
+.reward-visual img { object-fit: cover; }
 .reward-item strong { margin-top: 6px; font-size: 11px; }.reward-item span { color: #77746c; font-size: 9px; }
 .good-luck { margin-top: 17px; font-family: Impact, sans-serif; font-size: 17px; transform: rotate(-4deg); }.good-luck span { font-size: 27px; margin-left: 13px; }
 
@@ -266,8 +267,9 @@ button { color: inherit; }
 
 /* Full screen moment */
 .moment-screen { position: relative; min-height: 100dvh; padding: 28px 19px 20px; overflow: hidden; background: #080808; color: white; text-align: center; }
+.moment-background { z-index: 0; object-fit: cover; object-position: center bottom; }
 .moment-close { position: absolute; top: 9px; right: 14px; z-index: 5; width: 32px; height: 32px; display: grid; place-items: center; border-radius: 50%; background: #252525; font-size: 23px; }
-.moment-screen > h1 { font-family: Impact, sans-serif; font-size: 37px; line-height: .93; transform: rotate(-2deg); }
+.moment-screen > h1 { position: relative; z-index: 2; font-family: Impact, sans-serif; font-size: 37px; line-height: .93; transform: rotate(-2deg); }
 .moment-screen > h1 strong { color: var(--yellow); }
 .moment-card { position: relative; z-index: 2; margin: 18px auto 19px; padding: 8px 8px 12px; background: white; color: #111; border: 3px solid #111; border-radius: 9px; transform: rotate(-3deg); box-shadow: 5px 5px 0 var(--blue), -3px -3px 0 var(--yellow); }
 .moment-photo { position: relative; width: 100%; aspect-ratio: 1.08; overflow: hidden; border-radius: 5px; }
@@ -275,9 +277,7 @@ button { color: inherit; }
 .moment-caption { height: 45px; display: grid; grid-template-columns: 32px auto 1fr 28px; align-items: center; gap: 4px; text-align: left; }
 .mini-avatar { width: 25px; height: 25px; border-radius: 50%; background: #111; }.moment-caption strong { font-size: 13px; }.moment-caption small { align-self: end; margin-bottom: 8px; font-size: 8px; }
 .moment-caption svg { color: var(--red); }
-.moment-rays { position: absolute; left: -40px; right: -40px; bottom: -40px; height: 260px; background: repeating-conic-gradient(from -15deg at 50% 100%, var(--yellow) 0 11deg, transparent 11deg 23deg, var(--blue) 23deg 34deg, transparent 34deg 46deg); opacity: .95; }
 .moment-screen .wordmark { position: relative; z-index: 2; margin-top: 23px; }
-.crowd { position: absolute; z-index: 3; left: 0; right: 0; bottom: 10px; font-size: 24px; font-weight: 900; }
 
 @media (min-width: 600px) {
   .app-stage { padding: 22px 0; }
@@ -437,9 +437,7 @@ button { color: inherit; }
   .moment-card { grid-column: 2; grid-row: 1 / span 2; width: min(100%, 540px); margin: auto; }
   .moment-screen > .wordmark { grid-column: 1; grid-row: 2; align-self: start; width: 260px; margin: 50px 0 0; font-size: 86px; }
   .moment-screen > .wordmark > strong { font-size: 91px; }
-  .moment-rays { left: 35%; height: 65%; }
   .moment-close { top: 25px; right: 30px; }
-  .crowd { text-align: center; font-size: 34px; }
 }
 
 @media (max-width: 370px) {

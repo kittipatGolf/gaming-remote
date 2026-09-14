@@ -1,6 +1,7 @@
 "use client";
 
 import { Gift, Ticket } from "lucide-react";
+import Image from "next/image";
 import { rewardApi } from "@/api/rewards";
 import { MobileShell } from "@/components/layout/MobileShell";
 import { ErrorState, LoadingState } from "@/components/ui/DataState";
@@ -23,7 +24,14 @@ export default function RewardsPage() {
           <div className="reward-grid">
             {rewards.map((reward) => (
               <div className="reward-item" key={reward.name}>
-                <div style={{ background: reward.tone }} className="reward-visual">{reward.visual}</div>
+                <div className="reward-visual">
+                  <Image
+                    src={reward.image}
+                    alt={reward.name}
+                    fill
+                    sizes="(min-width: 1024px) 240px, 105px"
+                  />
+                </div>
                 <strong>{reward.name}</strong><span>{reward.amount} รางวัล</span>
               </div>
             ))}

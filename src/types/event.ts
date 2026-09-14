@@ -25,8 +25,7 @@ export interface Booth {
 export interface Reward {
   name: string;
   amount: number;
-  visual: string;
-  tone: string;
+  image: string;
 }
 
 export interface ActivityItem {
