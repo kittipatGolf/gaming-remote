@@ -15,15 +15,23 @@ export default function SharePage() {
   const [mode, setMode] = useState<"photo" | "video">("photo");
   const [nickname, setNickname] = useState("Mint");
   const [accepted, setAccepted] = useState(true);
-  const [preview, setPreview] = useState<MediaPreview>({
+  const [photoPreview, setPhotoPreview] = useState<MediaPreview>({
     url: "/images/festival-friends.png",
     type: "image",
   });
-  const objectUrlRef = useRef<string | null>(null);
+  const [videoPreview, setVideoPreview] = useState<MediaPreview | null>(null);
+  const objectUrlsRef = useRef<Record<"photo" | "video", string | null>>({
+    photo: null,
+    video: null,
+  });
+  const activePreview = mode === "photo" ? photoPreview : videoPreview;
 
   useEffect(() => {
+    const objectUrls = objectUrlsRef.current;
     return () => {
-      if (objectUrlRef.current) URL.revokeObjectURL(objectUrlRef.current);
+      Object.values(objectUrls).forEach((url) => {
+        if (url) URL.revokeObjectURL(url);
+      });
     };
   }, []);
 
@@ -31,13 +39,18 @@ export default function SharePage() {
     const file = event.target.files?.[0];
     if (!file) return;
 
-    if (objectUrlRef.current) URL.revokeObjectURL(objectUrlRef.current);
-
+    const nextMode = file.type.startsWith("video/") ? "video" : "photo";
+    const previousUrl = objectUrlsRef.current[nextMode];
+    if (previousUrl) URL.revokeObjectURL(previousUrl);
     const objectUrl = URL.createObjectURL(file);
-    objectUrlRef.current = objectUrl;
-    const type = file.type.startsWith("video/") ? "video" : "image";
-    setPreview({ url: objectUrl, type });
-    setMode(type === "video" ? "video" : "photo");
+    objectUrlsRef.current[nextMode] = objectUrl;
+
+    if (nextMode === "video") {
+      setVideoPreview({ url: objectUrl, type: "video" });
+    } else {
+      setPhotoPreview({ url: objectUrl, type: "image" });
+    }
+    setMode(nextMode);
   };
 
   return (
@@ -51,30 +64,39 @@ export default function SharePage() {
         </div>
 
         <div className="segmented-control" role="tablist" aria-label="ประเภทสื่อ">
-          <button className={mode === "photo" ? "selected" : ""} onClick={() => setMode("photo")}><ImageIcon size={17} /> รูปภาพ</button>
-          <button className={mode === "video" ? "selected" : ""} onClick={() => setMode("video")}><Video size={17} /> วิดีโอ</button>
+          <button type="button" role="tab" aria-selected={mode === "photo"} className={mode === "photo" ? "selected" : ""} onClick={() => setMode("photo")}><ImageIcon size={17} /> รูปภาพ</button>
+          <button type="button" role="tab" aria-selected={mode === "video"} className={mode === "video" ? "selected" : ""} onClick={() => setMode("video")}><Video size={17} /> วิดีโอ</button>
         </div>
 
-        <label className="upload-preview">
-          {preview.type === "image" ? (
+        <div className={`upload-preview ${activePreview ? "" : "upload-empty"}`} role="tabpanel">
+          {activePreview?.type === "image" ? (
             <Image
-              src={preview.url}
+              src={activePreview.url}
               alt="ตัวอย่างรูปที่เลือก"
               fill
               sizes="390px"
               priority
-              unoptimized={preview.url.startsWith("blob:")}
+              unoptimized={activePreview.url.startsWith("blob:")}
             />
+          ) : activePreview?.type === "video" ? (
+            <video src={activePreview.url} controls muted playsInline />
           ) : (
-            <video src={preview.url} controls muted playsInline />
+            <div className="upload-empty-state">
+              <Video size={38} />
+              <strong>เพิ่มวิดีโอของคุณ</strong>
+              <small>เลือกคลิปสนุก ๆ จากเครื่องของคุณ</small>
+            </div>
           )}
-          <span><Upload size={17} /> เปลี่ยน{mode === "photo" ? "รูป" : "วิดีโอ"}</span>
-          <input
-            type="file"
-            accept={mode === "photo" ? "image/*" : "video/*"}
-            onChange={handleMediaChange}
-          />
-        </label>
+          <label className={`preview-action ${activePreview ? "" : "preview-action-empty"}`}>
+            <Upload size={17} /> {activePreview ? "เปลี่ยน" : "เลือก"}{mode === "photo" ? "รูป" : "วิดีโอ"}
+            <input
+              key={mode}
+              type="file"
+              accept={mode === "photo" ? "image/*" : "video/*"}
+              onChange={handleMediaChange}
+            />
+          </label>
+        </div>
 
         <label className="field-label">
           ชื่อที่ใช้แสดงบนจอ

@@ -111,8 +111,14 @@ button { color: inherit; }
 .segmented-control button.selected { background: var(--red); color: white; box-shadow: 0 2px 6px rgb(187 24 30 / 22%); }
 .upload-preview { position: relative; display: block; width: 100%; aspect-ratio: 16/8.4; overflow: hidden; border-radius: 10px; border: 2px solid #292923; cursor: pointer; }
 .upload-preview img, .upload-preview video { width: 100%; height: 100%; object-fit: cover; }
-.upload-preview > span { position: absolute; right: 7px; bottom: 7px; z-index: 2; padding: 6px 9px; display: flex; align-items: center; gap: 5px; border-radius: 6px; background: rgb(0 0 0 / 73%); color: white; font-size: 10px; font-weight: 700; }
-.upload-preview input { position: absolute; opacity: 0; pointer-events: none; }
+.upload-preview.upload-empty { border-style: dashed; border-color: #aaa697; background: #f1efe5; }
+.preview-action { position: absolute; right: 7px; bottom: 7px; z-index: 2; padding: 6px 9px; display: flex; align-items: center; gap: 5px; border-radius: 6px; background: rgb(0 0 0 / 73%); color: white; font-size: 10px; font-weight: 700; cursor: pointer; }
+.preview-action-empty { right: 50%; bottom: 22px; transform: translateX(50%); background: var(--red); white-space: nowrap; }
+.preview-action input { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.upload-empty-state { position: absolute; inset: 0; padding-bottom: 39px; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #75736b; text-align: center; }
+.upload-empty-state svg { color: var(--red); }
+.upload-empty-state strong { margin-top: 6px; font-size: 13px; color: #25251f; }
+.upload-empty-state small { margin-top: 2px; font-size: 9px; }
 .field-label { display: block; margin-top: 13px; font-size: 11px; font-weight: 800; }
 .field-label input { display: block; width: 100%; height: 42px; margin-top: 5px; padding: 0 12px; border: 1.5px solid #cfcbbc; border-radius: 6px; background: white; outline: none; font-size: 14px; }
 .field-label input:focus { border-color: var(--red); box-shadow: 0 0 0 3px rgb(231 42 47 / 10%); }
