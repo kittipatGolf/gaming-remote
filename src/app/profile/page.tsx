@@ -30,10 +30,10 @@ export default function ProfilePage() {
           <ErrorState message={errorMessage} onRetry={() => void refetch()} />
         ) : (
           <div className="activity-list">
-            {activities.map((activity, index) => (
-              <Link href={index === 1 ? "/moment" : "/share/status"} className="activity-row" key={`${activity.type}-${activity.date}`}>
+            {activities.map((activity) => (
+              <Link href={`/moment?activity=${encodeURIComponent(activity.id)}`} className="activity-row" key={activity.id}>
                 <div className="activity-thumb"><Image src={activity.image} alt={activity.type} fill sizes="66px" />{activity.type === "วิดีโอ" && <Play size={20} fill="white" />}</div>
-                <div><strong>{activity.type}</strong><span>{activity.date}</span><small className={statusClass[activity.status]}>{activity.status}</small></div>
+                <div><strong>{activity.type}</strong><span>{activity.date}</span><small className={statusClass[activity.status]}>{activity.status}{activity.status === "อนุมัติแล้ว" && " (แสดงบนจอแล้ว)"}</small></div>
                 <Camera size={19} />
               </Link>
             ))}
