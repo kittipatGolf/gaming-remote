@@ -274,6 +274,9 @@ button { color: inherit; }
 .moment-card { position: relative; z-index: 2; margin: 18px auto 19px; padding: 8px 8px 12px; background: white; color: #111; border: 3px solid #111; border-radius: 9px; transform: rotate(-3deg); box-shadow: 5px 5px 0 var(--blue), -3px -3px 0 var(--yellow); }
 .moment-photo { position: relative; width: 100%; aspect-ratio: 1.08; overflow: hidden; border-radius: 5px; }
 .moment-photo img { object-fit: cover; }
+.moment-video-badge { position: absolute; inset: 50% auto auto 50%; z-index: 2; display: flex; align-items: center; gap: 5px; padding: 8px 12px; border: 2px solid white; border-radius: 999px; background: rgba(0, 0, 0, .72); color: white; font-size: 12px; font-weight: 800; transform: translate(-50%, -50%); }
+.moment-media-state { position: absolute; inset: 0; z-index: 3; display: grid; place-content: center; gap: 8px; background: rgba(0, 0, 0, .42); color: white; font-size: 12px; font-weight: 800; }
+.moment-media-error button { margin: 0 auto; padding: 6px 13px; border: 0; border-radius: 999px; background: var(--yellow); color: #111; font: inherit; cursor: pointer; }
 .moment-caption { height: 45px; display: grid; grid-template-columns: 32px auto 1fr 28px; align-items: center; gap: 4px; text-align: left; }
 .mini-avatar { width: 25px; height: 25px; border-radius: 50%; background: #111; }.moment-caption strong { font-size: 13px; }.moment-caption small { align-self: end; margin-bottom: 8px; font-size: 8px; }
 .moment-caption svg { color: var(--red); }

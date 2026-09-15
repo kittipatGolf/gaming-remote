@@ -29,6 +29,7 @@ export interface Reward {
 }
 
 export interface ActivityItem {
+  id: string;
   type: "รูปภาพ" | "วิดีโอ";
   date: string;
   status: "รอการอนุมัติ" | "อนุมัติแล้ว" | "ไม่อนุมัติ";

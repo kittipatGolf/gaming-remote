@@ -31,9 +31,9 @@ export default function ProfilePage() {
         ) : (
           <div className="activity-list">
             {activities.map((activity) => (
-              <Link href="/moment" className="activity-row" key={`${activity.type}-${activity.date}`}>
+              <Link href={`/moment?activity=${encodeURIComponent(activity.id)}`} className="activity-row" key={activity.id}>
                 <div className="activity-thumb"><Image src={activity.image} alt={activity.type} fill sizes="66px" />{activity.type === "วิดีโอ" && <Play size={20} fill="white" />}</div>
-                <div><strong>{activity.type}</strong><span>{activity.date}</span><small className={statusClass[activity.status]}>{activity.status}</small></div>
+                <div><strong>{activity.type}</strong><span>{activity.date}</span><small className={statusClass[activity.status]}>{activity.status}{activity.status === "อนุมัติแล้ว" && " (แสดงบนจอแล้ว)"}</small></div>
                 <Camera size={19} />
               </Link>
             ))}
