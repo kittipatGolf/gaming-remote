@@ -64,14 +64,9 @@ button { color: inherit; }
 .data-error button { min-height: 34px; padding: 0 13px; display: inline-flex; align-items: center; gap: 5px; border: 1.5px solid #222; border-radius: 99px; background: transparent; font-size: 10px; font-weight: 800; cursor: pointer; }
 @keyframes spin { to { transform: rotate(360deg); } }
 
-.wordmark { width: 190px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: center; color: #0b0b0a; font-family: Impact, "Arial Black", sans-serif; font-size: 68px; line-height: .75; letter-spacing: -8px; transform: rotate(-2deg); text-shadow: 1px 1px 0 #0b0b0a; }
-.wordmark > strong { flex-basis: 100%; text-align: center; font-size: 72px; letter-spacing: -7px; }
-.wordmark span { display: inline-block; }
-.wordmark span:nth-child(2) { transform: rotate(5deg); }
-.wordmark-red { color: var(--red); }
-.wordmark-blue { color: var(--blue); }
-.wordmark-compact { width: 145px; font-size: 48px; color: white; text-shadow: none; }
-.wordmark-compact > strong { font-size: 52px; }
+.wordmark { width: 190px; margin: 0 auto; line-height: 0; transform: rotate(-2deg); }
+.wordmark-image { display: block; width: 100%; height: auto; object-fit: contain; }
+.wordmark-compact { width: 145px; }
 
 .sticker { display: inline-flex; align-items: center; gap: 8px; padding: 9px 13px; font-family: Impact, "Arial Black", sans-serif; line-height: .9; transform: rotate(-2deg); clip-path: polygon(2% 8%, 96% 0, 100% 88%, 5% 100%); }
 .sticker-yellow { background: var(--yellow); }
@@ -81,8 +76,7 @@ button { color: inherit; }
 
 /* Home */
 .home-screen { position: relative; min-height: calc(100dvh - 53px); padding: 4px 15px 15px; display: flex; flex-direction: column; overflow: hidden; }
-.home-screen > .wordmark { width: 240px; margin-top: 7px; font-size: 84px; line-height: .72; }
-.home-screen > .wordmark > strong { font-size: 90px; }
+.home-screen > .wordmark { width: 240px; margin-top: 7px; }
 .home-screen h1 { margin: 15px 0 9px; text-align: center; font-size: 16px; font-weight: 900; }
 .hero-doodle { position: absolute; top: 25px; font-size: 34px; font-weight: 900; }
 .hero-doodle-left { left: 20px; transform: rotate(-24deg); }
@@ -274,11 +268,13 @@ button { color: inherit; }
 .moment-card { position: relative; z-index: 2; margin: 18px auto 19px; padding: 8px 8px 12px; background: white; color: #111; border: 3px solid #111; border-radius: 9px; transform: rotate(-3deg); box-shadow: 5px 5px 0 var(--blue), -3px -3px 0 var(--yellow); }
 .moment-photo { position: relative; width: 100%; aspect-ratio: 1.08; overflow: hidden; border-radius: 5px; }
 .moment-photo img { object-fit: cover; }
+.moment-video-badge { position: absolute; inset: 50% auto auto 50%; z-index: 2; display: flex; align-items: center; gap: 5px; padding: 8px 12px; border: 2px solid white; border-radius: 999px; background: rgba(0, 0, 0, .72); color: white; font-size: 12px; font-weight: 800; transform: translate(-50%, -50%); }
+.moment-media-state { position: absolute; inset: 0; z-index: 3; display: grid; place-content: center; gap: 8px; background: rgba(0, 0, 0, .42); color: white; font-size: 12px; font-weight: 800; }
+.moment-media-error button { margin: 0 auto; padding: 6px 13px; border: 0; border-radius: 999px; background: var(--yellow); color: #111; font: inherit; cursor: pointer; }
 .moment-caption { height: 45px; display: grid; grid-template-columns: 32px auto 1fr 28px; align-items: center; gap: 4px; text-align: left; }
 .mini-avatar { width: 25px; height: 25px; border-radius: 50%; background: #111; }.moment-caption strong { font-size: 13px; }.moment-caption small { align-self: end; margin-bottom: 8px; font-size: 8px; }
 .moment-caption svg { color: var(--red); }
-.moment-screen .wordmark { position: relative; z-index: 2; width: 235px; margin-top: 48px; font-size: 82px; }
-.moment-screen .wordmark > strong { font-size: 89px; }
+.moment-screen .wordmark { position: relative; z-index: 2; width: 235px; margin-top: 48px; }
 
 @media (min-width: 600px) {
   .app-stage { padding: 22px 0; }
@@ -310,8 +306,7 @@ button { color: inherit; }
 
   /* Desktop home */
   .home-screen { display: grid; grid-template-columns: minmax(330px, .92fr) minmax(410px, 1.08fr); grid-template-rows: auto auto auto; column-gap: clamp(32px, 5vw, 90px); align-items: center; }
-  .home-screen > .wordmark { grid-column: 1; grid-row: 1; width: 255px; margin-top: 10px; font-size: 91px; }
-  .home-screen > .wordmark > strong { font-size: 96px; }
+  .home-screen > .wordmark { grid-column: 1; grid-row: 1; width: 255px; margin-top: 10px; }
   .home-screen > h1 { grid-column: 1; grid-row: 2; margin: 24px 0 4px; font-size: 21px; }
   .home-stage { grid-column: 1 / -1; grid-row: 3; width: 100%; min-height: 650px; margin: 24px 0 0; padding: 164px 32px 28px; border-radius: 28px; }
   .home-hero-image { object-position: center 27%; }
@@ -436,8 +431,7 @@ button { color: inherit; }
   .moment-screen { min-height: 100dvh; padding: 55px clamp(55px, 8vw, 130px); display: grid; grid-template-columns: minmax(310px, .75fr) minmax(430px, 1.25fr); grid-template-rows: 1fr 1fr; align-items: center; column-gap: clamp(50px, 8vw, 120px); text-align: left; }
   .moment-screen > h1 { grid-column: 1; grid-row: 1; align-self: end; font-size: clamp(52px, 6vw, 88px); }
   .moment-card { grid-column: 2; grid-row: 1 / span 2; width: min(100%, 540px); margin: auto; }
-  .moment-screen > .wordmark { grid-column: 1; grid-row: 2; align-self: start; width: 260px; margin: 50px 0 0; font-size: 86px; }
-  .moment-screen > .wordmark > strong { font-size: 91px; }
+  .moment-screen > .wordmark { grid-column: 1; grid-row: 2; align-self: start; width: 260px; margin: 50px 0 0; }
   .moment-close { top: 25px; right: 30px; }
 }
 

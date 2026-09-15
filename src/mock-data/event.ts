@@ -65,7 +65,7 @@ export const rewards: Reward[] = [
 ];
 
 export const activities: ActivityItem[] = [
-  { type: "รูปภาพ", date: "12 ก.ย. 2026 14:32", status: "รอการอนุมัติ", image: "/images/festival-friends.png" },
-  { type: "วิดีโอ", date: "12 ก.ย. 2026 13:11", status: "อนุมัติแล้ว", image: "/images/craft-drinks.png" },
-  { type: "รูปภาพ", date: "12 ก.ย. 2026 11:05", status: "ไม่อนุมัติ", image: "/images/golf-booth.png" },
+  { id: "photo-pending", type: "รูปภาพ", date: "12 ก.ย. 2026 14:32", status: "รอการอนุมัติ", image: "/images/festival-friends.png" },
+  { id: "video-approved", type: "วิดีโอ", date: "12 ก.ย. 2026 13:11", status: "อนุมัติแล้ว", image: "/images/craft-drinks.png" },
+  { id: "photo-rejected", type: "รูปภาพ", date: "12 ก.ย. 2026 11:05", status: "ไม่อนุมัติ", image: "/images/golf-booth.png" },
 ];

@@ -7,4 +7,8 @@ export const activityApi = {
     const { data } = await apiClient.get<ApiResponse<ActivityItem[]>>("/api/v1/event/activities");
     return data.data;
   },
+  getById: async (id: string): Promise<ActivityItem> => {
+    const { data } = await apiClient.get<ApiResponse<ActivityItem>>(`/api/v1/event/activities/${id}`);
+    return data.data;
+  },
 };
